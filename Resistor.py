@@ -1,6 +1,3 @@
-from xml.dom import NoModificationAllowedErr
-
-
 class Resistor:
     def __init__(self, type, nom, power, accuracy):
         self.type = type
@@ -9,6 +6,6 @@ class Resistor:
         self.accuracy = accuracy
 
 
-    def show(self):
-        print(f"type - {self.type};  nominal - {self.nom} Om;   power - {self.power} W;   accuracy - {self.accuracy} %")
+    def __str__(self):
+        return f"type - {self.type};  nominal - {self.nom} Om;   power - {self.power} W;   accuracy - {self.accuracy} %"
   

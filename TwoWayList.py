@@ -30,14 +30,14 @@ class TwoWayList:
             cur = self.head
             if index == 0:
                 toDelete = cur
-                cur.setData(toDelete.getNext())
+                cur.setData(toDelete.next)
                 cur.setPrev(self.tail)
             else:
                 for i in range(index - 1):
-                        cur = cur.getNext()
+                        cur = cur.next
                 
-                toDelete = cur.getNext()
-                cur.setNext(toDelete.getNext())
+                toDelete = cur.next
+                cur.setNext(toDelete.next)
                 toDelete.setPrev(cur)
 
     def insert(self, index, item):
@@ -106,17 +106,17 @@ class TwoWayList:
     def show(self):
         cur = self.head
         while cur:
-            data = cur.getData()
-            data.show()
-            cur = cur.getNext()
+            data = cur.data
+            print(data)
+            cur = cur.next
 
     def showByAccuracy(self, accuracy):
         cur = self.head
         while cur:
-            data = cur.getData()
+            data = cur.data
             if data.accuracy <= accuracy:
-                data.show()
-            cur = cur.getNext()
+                print(data)
+            cur = cur.next
 
 
             
